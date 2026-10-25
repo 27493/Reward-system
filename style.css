@@ -1,0 +1,213 @@
+:root{
+  --bg:#f7f2ea;
+  --surface:#fffdf8;
+  --surface-2:#f1eade;
+  --ink:#2e2a24;
+  --text:#4a453d;
+  --muted:#857c70;
+  --line:#e8dfd2;
+  --line-soft:#efe8db;
+  --accent:#b06a52;
+  --accent-soft:rgba(176,106,82,.1);
+  --radius:16px;
+  --radius-sm:10px;
+  --measure:36rem;
+  --shadow:0 1px 2px rgba(96,74,52,.04),0 8px 20px rgba(96,74,52,.05);
+  --shadow-hover:0 2px 4px rgba(96,74,52,.05),0 12px 26px rgba(96,74,52,.08);
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+
+html{-webkit-text-size-adjust:100%}
+
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:"Hiragino Sans","Noto Sans JP","Yu Gothic",system-ui,sans-serif;
+  font-size:16px;
+  line-height:2.05;
+  letter-spacing:.015em;
+  -webkit-font-smoothing:antialiased;
+}
+
+a{color:inherit;text-decoration:none}
+::selection{background:rgba(176,106,82,.16);color:var(--ink)}
+
+h1,h2,h3,.serif{
+  font-family:"Hiragino Mincho ProN","Yu Mincho","Noto Serif JP",serif;
+  color:var(--ink);
+  font-weight:500;
+  line-height:1.65;
+  letter-spacing:.035em;
+}
+
+/* header */
+header{border-bottom:1px solid var(--line-soft)}
+.bar{
+  max-width:54rem;margin:0 auto;padding:22px 26px 18px;
+  display:flex;align-items:baseline;justify-content:space-between;
+  gap:14px;flex-wrap:wrap;
+}
+.logo{
+  font-family:"Hiragino Mincho ProN","Yu Mincho",serif;
+  font-size:.95rem;letter-spacing:.14em;color:var(--ink);
+}
+nav{display:flex;gap:16px;flex-wrap:wrap}
+nav a{
+  font-size:.76rem;color:var(--muted);padding:4px 2px;
+  border-bottom:1px solid transparent;
+  transition:color .25s,border-color .25s;
+}
+nav a:hover{color:var(--accent)}
+nav a.on{color:var(--ink);border-bottom-color:var(--accent)}
+
+main{max-width:54rem;margin:0 auto;padding:0 26px}
+
+/* hero */
+.hero{padding:64px 0 52px}
+.page-head{padding:50px 0 42px}
+.eyebrow{font-size:.74rem;color:var(--muted);letter-spacing:.06em;margin-bottom:16px}
+.page-head .no{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:2.1rem;height:2.1rem;margin-bottom:14px;
+  border-radius:50%;background:var(--accent-soft);
+  color:var(--accent);font-size:.78rem;
+  font-family:"Hiragino Sans","Noto Sans JP",sans-serif;
+}
+h1{font-size:clamp(1.75rem,5.6vw,2.7rem)}
+.page-head h1{font-size:clamp(1.5rem,4.6vw,2.25rem)}
+
+p{font-size:.92rem;line-height:2.05}
+.lead{max-width:var(--measure);margin-top:22px;font-size:.94rem;line-height:2.15}
+
+/* section */
+section{padding:42px 0}
+h2{font-size:clamp(1.2rem,3.4vw,1.5rem);margin-bottom:16px}
+h3{font-size:.98rem;line-height:1.7}
+
+/* 一文 */
+.statement{
+  margin:6px 0;padding:38px 28px;
+  background:var(--surface-2);border-radius:var(--radius);
+  text-align:center;
+}
+.statement p{
+  font-family:"Hiragino Mincho ProN","Yu Mincho","Noto Serif JP",serif;
+  color:var(--ink);font-size:clamp(1.15rem,3.6vw,1.5rem);
+  line-height:2.1;letter-spacing:.05em;
+}
+
+/* 項目 */
+.entries{
+  display:grid;gap:16px;margin-top:26px;
+  grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));
+}
+.entry{
+  display:block;
+  background:var(--surface);
+  border:1px solid var(--line-soft);
+  border-radius:var(--radius);
+  padding:20px 22px;
+  box-shadow:var(--shadow);
+  transition:box-shadow .3s,border-color .3s;
+}
+.entry:hover{border-color:#e2d5c3;box-shadow:var(--shadow-hover)}
+.entry .no{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:1.75rem;height:1.75rem;margin-bottom:10px;
+  border-radius:50%;background:var(--accent-soft);
+  color:var(--accent);font-size:.7rem;
+}
+.entry h3{margin-bottom:8px}
+.entry p{font-size:.86rem;color:var(--muted);line-height:1.95}
+
+/* 流れ */
+.flow{
+  margin-top:20px;padding:26px 24px;
+  background:var(--surface);
+  border:1px solid var(--line-soft);
+  border-radius:var(--radius);
+  font-family:"Hiragino Mincho ProN","Yu Mincho",serif;
+  color:var(--ink);font-size:clamp(1rem,2.9vw,1.22rem);
+  line-height:2.4;letter-spacing:.06em;text-align:center;
+}
+.flow-note{max-width:var(--measure);margin-top:16px;color:var(--muted);font-size:.88rem}
+
+/* 注記 */
+.aside{
+  max-width:var(--measure);margin-top:30px;padding:22px 24px;
+  background:var(--surface-2);border-radius:var(--radius);
+}
+.aside .label{font-size:.72rem;color:var(--accent);letter-spacing:.08em}
+.aside p{
+  font-family:"Hiragino Mincho ProN","Yu Mincho",serif;
+  color:var(--ink);font-size:1rem;margin-top:8px;line-height:2;
+}
+
+/* 手順 */
+.steps{list-style:none;margin-top:24px;max-width:var(--measure)}
+.steps li{
+  display:flex;gap:14px;padding:16px 18px;margin-bottom:10px;
+  background:var(--surface);
+  border:1px solid var(--line-soft);
+  border-radius:var(--radius-sm);
+}
+.steps .no{
+  flex:0 0 1.75rem;height:1.75rem;
+  display:inline-flex;align-items:center;justify-content:center;
+  border-radius:50%;background:var(--accent-soft);
+  color:var(--accent);font-size:.72rem;margin-top:4px;
+}
+.steps h3{margin-bottom:4px}
+.steps p{font-size:.86rem;color:var(--muted);line-height:1.95}
+
+/* 強調 */
+.mark{background:linear-gradient(transparent 62%,rgba(176,106,82,.16) 62%)}
+
+/* 締め */
+.closing{
+  margin:8px 0 6px;padding:40px 28px;
+  background:var(--surface-2);border-radius:var(--radius);
+}
+.closing h2{font-size:clamp(1.3rem,4.2vw,1.85rem)}
+.closing p{max-width:var(--measure);margin-top:18px;color:var(--muted)}
+
+/* pager */
+.pager{
+  display:flex;gap:10px;flex-wrap:wrap;align-items:center;
+  padding:38px 0 58px;font-size:.82rem;
+}
+.pager a{
+  padding:9px 18px;border-radius:999px;
+  background:var(--surface);border:1px solid var(--line-soft);
+  color:var(--muted);box-shadow:var(--shadow);
+  transition:color .25s,border-color .25s,box-shadow .25s;
+}
+.pager a:hover{color:var(--accent);border-color:#e2d5c3;box-shadow:var(--shadow-hover)}
+.pager .nx{margin-left:auto}
+
+/* footer */
+footer{border-top:1px solid var(--line-soft)}
+.foot{
+  max-width:54rem;margin:0 auto;padding:20px 26px 42px;
+  display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+  font-size:.72rem;color:var(--muted);letter-spacing:.06em;
+}
+
+/* responsive */
+@media (max-width:560px){
+  .bar{padding:18px 20px 15px}
+  main{padding:0 20px}
+  nav{gap:10px 14px}
+  nav a{font-size:.72rem}
+  .hero{padding:46px 0 40px}
+  .page-head{padding:38px 0 32px}
+  .statement{padding:30px 20px}
+  .closing{padding:32px 20px}
+  .flow{padding:22px 16px}
+  .foot{padding:18px 20px 34px}
+}
+
+@media (prefers-reduced-motion:reduce){
+  *{transition:none!important}
+}
